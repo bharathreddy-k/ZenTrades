@@ -406,26 +406,6 @@ Production upgrade path: PostgreSQL or MongoDB
 
 ---
 
-## 🎥 Demo Video Checklist
-
-When recording your Loom video (3-5 minutes), show:
-
-1. ✅ **Project structure** - Quick tour of folders
-2. ✅ **Run Pipeline A** - `python run_pipeline.py` (demo → v1)
-3. ✅ **Show v1 output** - Open memo.json, show `questions_or_unknowns`
-4. ✅ **Run Pipeline B** - Onboarding transcript processing
-5. ✅ **Show v2 output** - Highlight resolved unknowns
-6. ✅ **Show changelog** - Point out tracked changes
-7. ✅ **n8n workflows** (if time) - Quick import demo
-
-**Key talking points:**
-- "Notice how v1 marks unknowns instead of guessing"
-- "The patch only updates what changed"
-- "v1 is preserved, not overwritten"
-- "Changelog provides full audit trail"
-
----
-
 ## 🚨 Known Limitations
 
 | Issue | Current State | Future Improvement |
