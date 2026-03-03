@@ -115,7 +115,7 @@ def main():
     # Option 1: Transcribe a specific file
     # Uncomment and modify this section for single file transcription
     
-    specific_file = r"c:\Users\Bharath\Downloads\audio1975518882.m4a"
+    specific_file = r"c:\Users\Bharath\Downloads\good-boy-praiseful-male-smartsound-fx-1-00-01.mp3"
     
     print(f"🔍 Checking file: {specific_file}")
     
