@@ -1,0 +1,70 @@
+{
+    "account_id": "ben_penoyer_electrical",
+    "version_upgrade": "v1 -> v2",
+    "timestamp": "2026-03-03 18:56:29",
+    "total_changes": 7,
+    "changes": [
+        {
+            "field": "business_hours",
+            "old_value": null,
+            "new_value": "Monday-Friday 8AM - 5PM",
+            "reason": "Clarified during onboarding"
+        },
+        {
+            "field": "timezone",
+            "old_value": null,
+            "new_value": "Eastern",
+            "reason": "Clarified during onboarding"
+        },
+        {
+            "field": "office_address",
+            "old_value": null,
+            "new_value": "245 Industrial Park Road, Raleigh, NC 27603",
+            "reason": "Clarified during onboarding"
+        },
+        {
+            "field": "emergency_definition",
+            "old_value": [
+                "Exposed Wiring",
+                "Electrical Fire",
+                "Power Outage"
+            ],
+            "new_value": [
+                "Sparking Outlet",
+                "Sparking Electrical",
+                "Electrical Fires",
+                "Burning Smell",
+                "Exposed Wiring",
+                "Electrical Fire",
+                "Power Outage"
+            ],
+            "reason": "Clarified during onboarding"
+        },
+        {
+            "field": "phone_numbers",
+            "old_value": null,
+            "new_value": {
+                "on_call_number": "919-555-0198"
+            },
+            "reason": "Clarified during onboarding"
+        },
+        {
+            "field": "emergency_contact_email",
+            "old_value": null,
+            "new_value": "ben@penoyerelectrical.com",
+            "reason": "Clarified during onboarding"
+        },
+        {
+            "field": "call_transfer_rules",
+            "old_value": null,
+            "new_value": {
+                "business_hours_number": null,
+                "after_hours_emergency_number": "919-555-0198",
+                "timeout_seconds": 30,
+                "retry_policy": "Take message if no answer"
+            },
+            "reason": "Clarified during onboarding"
+        }
+    ],
+    "summary": "Applied 7 update(s) from onboarding call"
+}

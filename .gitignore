@@ -1,0 +1,42 @@
+# Python
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+.Python
+env/
+venv/
+.venv/
+ENV/
+build/
+dist/
+*.egg-info/
+.pytest_cache/
+.coverage
+
+# IDE
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+
+# OS
+.DS_Store
+Thumbs.db
+desktop.ini
+
+# Logs
+*.log
+
+# N8N
+.n8n/
+
+# Temporary files
+*.tmp
+*.bak
+.cache/
+
+# Keep structure folders but not contents (except .gitkeep)
+# logs/*.txt
+# !logs/.gitkeep

@@ -1,0 +1,89 @@
+Onboarding Call Transcript - Ben Penoyer Electrical
+Date: March 2, 2026
+Duration: 18:45
+
+[Onboarding Specialist]: Hi Ben, thanks for jumping on this onboarding call. I'm going to walk through some specifics so we can configure your AI receptionist exactly how you need it.
+
+[Ben]: Sounds good.
+
+[Onboarding Specialist]: Great. First, let's start with your business hours. What are your office hours?
+
+[Ben]: We're open Monday through Friday, 8 AM to 5 PM. We're in the Eastern time zone.
+
+[Onboarding Specialist]: Perfect. Monday to Friday, 8 AM to 5 PM Eastern. Got it. Now, what's your office address?
+
+[Ben]: It's 245 Industrial Park Road, Raleigh, North Carolina, 27603.
+
+[Onboarding Specialist]: Thanks. Now let's talk about emergencies. In the demo call, you mentioned things like exposed wiring and electrical fires. What exactly counts as an emergency for your business?
+
+[Ben]: An emergency for us means: complete power outage affecting a home or business, exposed wiring where there's risk of shock, sparking outlets or panels, burning smell from electrical equipment, and obvious electrical fires. Those are the ones where we need to respond immediately.
+
+[Onboarding Specialist]: Got it. So: power outage, exposed wiring, sparking electrical, burning smell, or electrical fire. Those get immediate escalation. What about something like a tripped breaker or a single outlet not working?
+
+[Ben]: Those are not emergencies. We'll handle them during business hours.
+
+[Onboarding Specialist]: Perfect. Now, for emergency calls during business hours, who should the AI transfer to?
+
+[Ben]: During business hours, transfer to our main office line: 919-555-0147.
+
+[Onboarding Specialist]: And after hours? Who's on call for emergencies?
+
+[Ben]: After hours, transfer to my personal cell: 919-555-0198. That's the on-call number.
+
+[Onboarding Specialist]: Got it. Now, if the transfer fails - say the office line is busy or you don't answer your cell - what do you want to happen?
+
+[Ben]: If it's an emergency and the transfer fails, the AI should take their name, phone, address, and description of the issue. Then it should send me a text and email immediately. I'll call them back within 10 minutes.
+
+[Onboarding Specialist]: Perfect. What's the email for those emergency alerts?
+
+[Ben]: Send it to ben@penoyerelectrical.com.
+
+[Onboarding Specialist]: Got it. Now let's talk about non-emergency calls. During business hours, if someone calls for a regular service request, same transfer number?
+
+[Ben]: Yeah, transfer to the office: 919-555-0147. If no one picks up, have the AI take a message and let them know we'll call back within 60 minutes.
+
+[Onboarding Specialist]: Perfect. 60-minute callback window for non-emergencies during business hours. Now, after hours, if it's NOT an emergency - say someone just wants to schedule a panel upgrade - what should happen?
+
+[Ben]: Take their name, phone number, and a brief description of what they need. Tell them we'll call them back first thing during business hours, which would be the next morning at 8 AM Eastern.
+
+[Onboarding Specialist]: Perfect. Alright, you mentioned you use Jobber as your CRM. Do you want us to try integrating with that, or should we keep it simple for now?
+
+[Ben]: Let's keep it simple for now. I can manually add the info to Jobber when I get the notifications.
+
+[Onboarding Specialist]: Totally fine. We'll note that you use Jobber and we can integrate later. Now, let's confirm your services. You mentioned residential service, commercial service, and project work. Anything else?
+
+[Ben]: That covers it. Residential and commercial electrical service - repairs, troubleshooting, installations. And project work like panel upgrades, rewiring, EV charger installations, stuff like that.
+
+[Onboarding Specialist]: Great. Does your AI receptionist need to ask any specific intake questions? For example, do you want it to ask if they're a new or existing customer?
+
+[Ben]: Yeah, that's helpful. Ask if they're a new customer or if they've used us before. And if it's a service call, ask if it's inside the home or outside.
+
+[Onboarding Specialist]: Perfect. So: new or returning customer, and location of issue - inside or outside. Anything else?
+
+[Ben]: Nope, that should do it.
+
+[Onboarding Specialist]: Awesome. Let me recap what we've got:
+
+Business hours: Monday to Friday, 8 AM to 5 PM Eastern.
+Office address: 245 Industrial Park Road, Raleigh, NC 27603.
+Emergency definition: power outage, exposed wiring, sparking electrical, burning smell, electrical fire.
+Business hours transfer: 919-555-0147.
+After hours emergency transfer: 919-555-0198.
+Failed transfer protocol: Collect info, send email to ben@penoyerelectrical.com, send text to 919-555-0198.
+Non-emergency callback: 60 minutes during business hours.
+After hours non-emergency: Message taken, callback next business day at 8 AM.
+Services: Residential, commercial, project work.
+Intake questions: New or returning customer, issue location (inside/outside).
+CRM: Jobber (no integration for now).
+
+Did I get all that right?
+
+[Ben]: Yep, that's everything.
+
+[Onboarding Specialist]: Perfect. We'll configure everything and have your AI receptionist live within 24 hours. I'll send you a link to test it out before it goes live.
+
+[Ben]: Sounds great. Thanks.
+
+[Onboarding Specialist]: You're welcome. Talk soon!
+
+[End of Call]

@@ -1,0 +1,57 @@
+Demo Call Transcript - Ben Penoyer Electrical
+Date: March 1, 2026
+Duration: 12:34
+
+[Salesperson]: Hi, is this Ben from Penoyer Electrical?
+
+[Ben]: Yeah, this is Ben.
+
+[Salesperson]: Great! I'm calling to show you how our AI receptionist can handle calls for your electrical business. Let me give you a quick demo of what we're thinking. So imagine a customer calls in...
+
+[Salesperson as Customer]: "Hi, I need help with my electrical panel. It's making a buzzing sound."
+
+[Salesperson as AI]: "Good morning, thank you for calling Penoyer Electrical. I can help you with that. Are you experiencing this issue right now, or is it something you'd like scheduled?"
+
+[Ben]: Okay, that's good. What if it's after hours though?
+
+[Salesperson]: Great question. So if someone calls after hours, the AI will ask if it's an emergency. For example:
+
+[Salesperson as Customer]: "Yeah, I'm calling at 9 PM because my power is completely out."
+
+[Salesperson as AI]: "I understand. To confirm, do you have a complete power outage or is this an emergency situation where there's immediate danger?"
+
+[Ben]: Right, because not everything after hours is an emergency. Sometimes people just want to schedule.
+
+[Salesperson]: Exactly. So the AI will triage that. Now, you mentioned you use Jobber for your CRM. Eventually we can integrate with that, so when the AI collects customer info, it goes right into Jobber. For now, we'd have the AI collect name, phone number, service type, and address if it's an emergency.
+
+[Ben]: Yeah, we do mostly residential service calls and some commercial projects. Residential is probably 70% of our business.
+
+[Salesperson]: Perfect. So when a residential service call comes in during business hours, the AI will collect the basic info and transfer to your office. If the transfer doesn't work - like if everyone's on a call - the AI will take a message and assure them someone will follow up within an hour.
+
+[Ben]: What about emergency calls? We get those sometimes - exposed wiring, electrical fires, that kind of thing.
+
+[Salesperson]: For emergencies, the AI immediately collects name, phone, address, and the nature of the emergency, then attempts to transfer to your on-call number. If that doesn't connect, it escalates by sending you a text and email immediately.
+
+[Ben]: That makes sense. And you said this can handle after hours too?
+
+[Salesperson]: Yep. After hours, if it's NOT an emergency, the AI takes their info and confirms someone will call back during business hours - which I assume is Monday through Friday?
+
+[Ben]: We're open Monday to Friday, but I haven't told you our exact hours yet. That's something we'd need to clarify.
+
+[Salesperson]: No problem. During onboarding, we'll get all those specifics - exact business hours, timezone, your on-call protocols, transfer numbers, all of that.
+
+[Ben]: Sounds good. And just to be clear, we do residential electrical service, commercial electrical service, and some project work - like panel upgrades, rewiring, that kind of thing.
+
+[Salesperson]: Got it. The AI will know your services and can ask qualifying questions. For example, if someone calls about a panel upgrade, it might ask if it's for a home or business, how old the current panel is, stuff like that.
+
+[Ben]: Perfect. I like that it's not just taking messages blindly.
+
+[Salesperson]: Exactly. It's smart enough to triage and collect the right info without being annoying. Alright Ben, this was just a demo to show you the flow. Next step is an onboarding call where we dial in all the details specific to your business.
+
+[Ben]: Sounds good. Let's schedule that.
+
+[Salesperson]: Perfect. I'll send you a calendar link. Talk soon!
+
+[Ben]: Thanks.
+
+[End of Call]

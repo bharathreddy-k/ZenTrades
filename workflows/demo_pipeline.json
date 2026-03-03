@@ -1,0 +1,146 @@
+{
+  "name": "Pipeline A: Demo Transcript → v1 Agent Spec",
+  "nodes": [
+    {
+      "parameters": {},
+      "id": "1c8c7e6b-73f2-4e0c-a5d3-2e9b8f1a7c3d",
+      "name": "Manual Trigger",
+      "type": "n8n-nodes-base.manualTrigger",
+      "typeVersion": 1,
+      "position": [250, 300]
+    },
+    {
+      "parameters": {
+        "path": "../dataset/demo",
+        "fileExtension": "*.txt"
+      },
+      "id": "2d9e8f7c-84e3-4f1d-b6e4-3f0c9g2b8d4e",
+      "name": "Read Demo Transcripts",
+      "type": "n8n-nodes-base.readBinaryFiles",
+      "typeVersion": 1,
+      "position": [450, 300]
+    },
+    {
+      "parameters": {
+        "command": "cd scripts && python extract_demo.py",
+        "ignoreError": false
+      },
+      "id": "3e0f9g8d-95f4-4g2e-c7f5-4g1d0h3c9e5f",
+      "name": "Extract Account Memo",
+      "type": "n8n-nodes-base.executeCommand",
+      "typeVersion": 1,
+      "position": [650, 300],
+      "notes": "Runs extraction script to create v1 memo.json from demo transcript"
+    },
+    {
+      "parameters": {
+        "command": "cd scripts && python generate_agent.py",
+        "ignoreError": false
+      },
+      "id": "4f1g0h9e-06g5-4h3f-d8g6-5h2e1i4d0f6g",
+      "name": "Generate v1 Agent Spec",
+      "type": "n8n-nodes-base.executeCommand",
+      "typeVersion": 1,
+      "position": [850, 300],
+      "notes": "Generates Retell AI agent specification from memo"
+    },
+    {
+      "parameters": {
+        "message": "✅ Pipeline A Complete!\n\nv1 memo and agent spec created.",
+        "title": "Demo Pipeline Success"
+      },
+      "id": "5g2h1i0f-17h6-4i4g-e9h7-6i3f2j5e1g7h",
+      "name": "Success Notification",
+      "type": "n8n-nodes-base.slack",
+      "typeVersion": 1,
+      "position": [1050, 300],
+      "notes": "Optional: Send notification on completion"
+    },
+    {
+      "parameters": {
+        "path": "logs/run_log.txt",
+        "content": "={{ $now.format('yyyy-MM-dd HH:mm:ss') }} - Pipeline A executed successfully\n",
+        "append": true
+      },
+      "id": "6h3i2j1g-28i7-4j5h-f0i8-7j4g3k6f2h8i",
+      "name": "Log Execution",
+      "type": "n8n-nodes-base.writeFile",
+      "typeVersion": 1,
+      "position": [850, 450],
+      "notes": "Append execution log"
+    }
+  ],
+  "connections": {
+    "Manual Trigger": {
+      "main": [
+        [
+          {
+            "node": "Read Demo Transcripts",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Read Demo Transcripts": {
+      "main": [
+        [
+          {
+            "node": "Extract Account Memo",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Extract Account Memo": {
+      "main": [
+        [
+          {
+            "node": "Generate v1 Agent Spec",
+            "type": "main",
+            "index": 0
+          },
+          {
+            "node": "Log Execution",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Generate v1 Agent Spec": {
+      "main": [
+        [
+          {
+            "node": "Success Notification",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    }
+  },
+  "settings": {
+    "saveExecutionProgress": "DEFAULT",
+    "saveManualExecutions": true,
+    "saveDataErrorExecution": "all",
+    "saveDataSuccessExecution": "all",
+    "executionTimeout": -1,
+    "timezone": "America/New_York"
+  },
+  "staticData": null,
+  "tags": [
+    {
+      "id": "zentrades-pipeline-a",
+      "name": "Demo Pipeline"
+    }
+  ],
+  "meta": {
+    "instanceId": "zentrades-demo-pipeline"
+  },
+  "pinData": {},
+  "versionId": "1",
+  "createdAt": "2026-03-03T00:00:00.000Z",
+  "updatedAt": "2026-03-03T00:00:00.000Z"
+}

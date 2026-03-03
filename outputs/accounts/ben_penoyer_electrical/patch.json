@@ -1,0 +1,24 @@
+{
+    "business_hours": "Monday-Friday 8AM - 5PM",
+    "timezone": "Eastern",
+    "office_address": "245 Industrial Park Road, Raleigh, NC 27603",
+    "emergency_definition": [
+        "Sparking Outlet",
+        "Sparking Electrical",
+        "Electrical Fires",
+        "Burning Smell",
+        "Exposed Wiring",
+        "Electrical Fire",
+        "Power Outage"
+    ],
+    "phone_numbers": {
+        "on_call_number": "919-555-0198"
+    },
+    "emergency_contact_email": "ben@penoyerelectrical.com",
+    "call_transfer_rules": {
+        "business_hours_number": null,
+        "after_hours_emergency_number": "919-555-0198",
+        "timeout_seconds": 30,
+        "retry_policy": "Take message if no answer"
+    }
+}

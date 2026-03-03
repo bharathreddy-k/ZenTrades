@@ -1,0 +1,223 @@
+{
+  "name": "Pipeline B: Onboarding Transcript → v2 Agent Spec + Changelog",
+  "nodes": [
+    {
+      "parameters": {},
+      "id": "7i4j3k2h-39j8-4k6i-g1j9-8k5h4l7g3i9j",
+      "name": "Manual Trigger",
+      "type": "n8n-nodes-base.manualTrigger",
+      "typeVersion": 1,
+      "position": [250, 300]
+    },
+    {
+      "parameters": {
+        "path": "../dataset/onboarding",
+        "fileExtension": "*.txt"
+      },
+      "id": "8j5k4l3i-40k9-4l7j-h2k0-9l6i5m8h4j0k",
+      "name": "Read Onboarding Transcripts",
+      "type": "n8n-nodes-base.readBinaryFiles",
+      "typeVersion": 1,
+      "position": [450, 300]
+    },
+    {
+      "parameters": {
+        "command": "cd scripts && python extract_onboarding.py",
+        "ignoreError": false
+      },
+      "id": "9k6l5m4j-51l0-4m8k-i3l1-0m7j6n9i5k1l",
+      "name": "Extract Onboarding Updates",
+      "type": "n8n-nodes-base.executeCommand",
+      "typeVersion": 1,
+      "position": [650, 300],
+      "notes": "Extracts structured updates from onboarding call"
+    },
+    {
+      "parameters": {
+        "filePath": "../outputs/accounts/*/v1/memo.json"
+      },
+      "id": "0l7m6n5k-62m1-4n9l-j4m2-1n8k7o0j6l2m",
+      "name": "Load Existing v1 Memo",
+      "type": "n8n-nodes-base.readFile",
+      "typeVersion": 1,
+      "position": [650, 450],
+      "notes": "Load the existing v1 memo for patching"
+    },
+    {
+      "parameters": {
+        "command": "cd scripts && python apply_patch.py",
+        "ignoreError": false
+      },
+      "id": "1m8n7o6l-73n2-4o0m-k5n3-2o9l8p1k7m3n",
+      "name": "Apply Patch & Create v2",
+      "type": "n8n-nodes-base.executeCommand",
+      "typeVersion": 1,
+      "position": [850, 300],
+      "notes": "Merges onboarding updates into v1 to create v2"
+    },
+    {
+      "parameters": {
+        "command": "cd scripts && python generate_agent.py",
+        "ignoreError": false
+      },
+      "id": "2n9o8p7m-84o3-4p1n-l6o4-3p0m9q2l8n4o",
+      "name": "Regenerate Agent Specs",
+      "type": "n8n-nodes-base.executeCommand",
+      "typeVersion": 1,
+      "position": [1050, 300],
+      "notes": "Regenerate both v1 and v2 agent specifications"
+    },
+    {
+      "parameters": {
+        "filePath": "../changelog/*_v1_to_v2.json"
+      },
+      "id": "3o0p9q8n-95p4-4q2o-m7p5-4q1n0r3m9o5p",
+      "name": "Read Changelog",
+      "type": "n8n-nodes-base.readFile",
+      "typeVersion": 1,
+      "position": [1050, 450],
+      "notes": "Read the generated changelog for reporting"
+    },
+    {
+      "parameters": {
+        "message": "✅ Pipeline B Complete!\n\nv2 created with {{ $json.total_changes }} changes.\n\nChangelog: {{ $json.summary }}",
+        "title": "Onboarding Pipeline Success"
+      },
+      "id": "4p1q0r9o-06q5-4r3p-n8q6-5r2o1s4n0p6q",
+      "name": "Success Notification",
+      "type": "n8n-nodes-base.slack",
+      "typeVersion": 1,
+      "position": [1250, 300],
+      "notes": "Optional: Send notification with changelog summary"
+    },
+    {
+      "parameters": {
+        "path": "logs/run_log.txt",
+        "content": "={{ $now.format('yyyy-MM-dd HH:mm:ss') }} - Pipeline B executed successfully\n",
+        "append": true
+      },
+      "id": "5q2r1s0p-17r6-4s4q-o9r7-6s3p2t5o1q7r",
+      "name": "Log Execution",
+      "type": "n8n-nodes-base.writeFile",
+      "typeVersion": 1,
+      "position": [1050, 600],
+      "notes": "Append execution log"
+    }
+  ],
+  "connections": {
+    "Manual Trigger": {
+      "main": [
+        [
+          {
+            "node": "Read Onboarding Transcripts",
+            "type": "main",
+            "index": 0
+          },
+          {
+            "node": "Load Existing v1 Memo",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Read Onboarding Transcripts": {
+      "main": [
+        [
+          {
+            "node": "Extract Onboarding Updates",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Extract Onboarding Updates": {
+      "main": [
+        [
+          {
+            "node": "Apply Patch & Create v2",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Load Existing v1 Memo": {
+      "main": [
+        [
+          {
+            "node": "Apply Patch & Create v2",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Apply Patch & Create v2": {
+      "main": [
+        [
+          {
+            "node": "Regenerate Agent Specs",
+            "type": "main",
+            "index": 0
+          },
+          {
+            "node": "Read Changelog",
+            "type": "main",
+            "index": 0
+          },
+          {
+            "node": "Log Execution",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Regenerate Agent Specs": {
+      "main": [
+        [
+          {
+            "node": "Success Notification",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Read Changelog": {
+      "main": [
+        [
+          {
+            "node": "Success Notification",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    }
+  },
+  "settings": {
+    "saveExecutionProgress": "DEFAULT",
+    "saveManualExecutions": true,
+    "saveDataErrorExecution": "all",
+    "saveDataSuccessExecution": "all",
+    "executionTimeout": -1,
+    "timezone": "America/New_York"
+  },
+  "staticData": null,
+  "tags": [
+    {
+      "id": "zentrades-pipeline-b",
+      "name": "Onboarding Pipeline"
+    }
+  ],
+  "meta": {
+    "instanceId": "zentrades-onboarding-pipeline"
+  },
+  "pinData": {},
+  "versionId": "2",
+  "createdAt": "2026-03-03T00:00:00.000Z",
+  "updatedAt": "2026-03-03T00:00:00.000Z"
+}
