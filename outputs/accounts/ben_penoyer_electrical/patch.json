@@ -3,13 +3,13 @@
     "timezone": "Eastern",
     "office_address": "245 Industrial Park Road, Raleigh, NC 27603",
     "emergency_definition": [
-        "Sparking Outlet",
         "Sparking Electrical",
-        "Electrical Fires",
-        "Burning Smell",
         "Exposed Wiring",
         "Electrical Fire",
-        "Power Outage"
+        "Burning Smell",
+        "Sparking Outlet",
+        "Power Outage",
+        "Electrical Fires"
     ],
     "phone_numbers": {
         "on_call_number": "919-555-0198"

@@ -1,7 +1,7 @@
 {
     "account_id": "ben_penoyer_electrical",
     "version_upgrade": "v1 -> v2",
-    "timestamp": "2026-03-03 18:56:29",
+    "timestamp": "2026-03-03 19:03:51",
     "total_changes": 7,
     "changes": [
         {
@@ -30,13 +30,13 @@
                 "Power Outage"
             ],
             "new_value": [
-                "Sparking Outlet",
                 "Sparking Electrical",
-                "Electrical Fires",
-                "Burning Smell",
                 "Exposed Wiring",
                 "Electrical Fire",
-                "Power Outage"
+                "Burning Smell",
+                "Sparking Outlet",
+                "Power Outage",
+                "Electrical Fires"
             ],
             "reason": "Clarified during onboarding"
         },
