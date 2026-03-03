@@ -6,6 +6,37 @@
 [![Pipeline](https://img.shields.io/badge/Pipeline-A+B-blue)]()
 [![Version](https://img.shields.io/badge/Version-1.0-orange)]()
 
+> ⚠️ **Project Context**: Built for ZenTrades technical assignment (Due: March 5th, 2026)
+
+---
+
+## 🚀 Quick Start
+
+```bash
+# 1. Clone the repository
+git clone https://github.com/bharathreddy-k/ZenTrades.git
+cd ZenTrades
+
+# 2. Install dependencies (optional - for audio transcription)
+pip install openai-whisper torch
+
+# 3. Add transcripts to dataset folders
+#    Sample transcripts already included in:
+#    - dataset/demo/ben_penoyer_electrical.txt
+#    - dataset/onboarding/ben_penoyer_electrical.txt
+
+# 4. Run the complete pipeline
+cd scripts
+python run_pipeline.py
+
+# 5. View outputs
+#    outputs/accounts/<account_id>/v1/     → Initial config with nulls
+#    outputs/accounts/<account_id>/v2/     → Production-ready config
+#    changelog/                            → Full audit trail
+```
+
+**⚡ Execution time:** ~0.8 seconds for complete end-to-end pipeline
+
 ---
 
 ## 🎯 What This Does
@@ -150,7 +181,34 @@ This will:
 
 ---
 
-## 📘 How It Works
+## � Live Example (Actual Output from Repo)
+
+This project includes a complete working example with **Ben Penoyer Electrical**:
+
+### 📥 Input Files
+- **Demo transcript**: [`dataset/demo/ben_penoyer_electrical.txt`](dataset/demo/ben_penoyer_electrical.txt)
+- **Onboarding transcript**: [`dataset/onboarding/ben_penoyer_electrical.txt`](dataset/onboarding/ben_penoyer_electrical.txt)
+
+### 📤 Generated Outputs
+- **v1 memo**: [`outputs/accounts/ben_penoyer_electrical/v1/memo.json`](outputs/accounts/ben_penoyer_electrical/v1/memo.json) *(43% complete, nulls for unknowns)*
+- **v2 memo**: [`outputs/accounts/ben_penoyer_electrical/v2/memo.json`](outputs/accounts/ben_penoyer_electrical/v2/memo.json) *(93% complete, production-ready)*
+- **Changelog**: [`changelog/ben_penoyer_electrical_v1_to_v2.json`](changelog/ben_penoyer_electrical_v1_to_v2.json) *(7 tracked changes)*
+
+### 🔍 Quick Comparison
+
+| Field | v1 (Demo) | v2 (Onboarding) |
+|-------|-----------|-----------------|
+| business_hours | `null` | `"Monday-Friday 8AM - 5PM"` |
+| timezone | `null` | `"Eastern"` |
+| office_address | `null` | `"245 Industrial Park Road, Raleigh, NC 27603"` |
+| emergency_definition | 3 scenarios | 7 scenarios |
+| call_transfer_rules | `null` | Complete protocol with numbers |
+
+**⚡ Pipeline Execution:** 0.82 seconds end-to-end
+
+---
+
+## �📘 How It Works
 
 ### 1. Pipeline A: Demo → v1
 

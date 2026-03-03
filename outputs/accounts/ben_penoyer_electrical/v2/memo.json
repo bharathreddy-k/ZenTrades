@@ -11,13 +11,13 @@
         "rewiring"
     ],
     "emergency_definition": [
-        "Sparking Electrical",
-        "Exposed Wiring",
-        "Electrical Fire",
-        "Burning Smell",
-        "Sparking Outlet",
         "Power Outage",
-        "Electrical Fires"
+        "Sparking Outlet",
+        "Electrical Fires",
+        "Sparking Electrical",
+        "Electrical Fire",
+        "Exposed Wiring",
+        "Burning Smell"
     ],
     "emergency_routing_rules": null,
     "non_emergency_routing_rules": null,
