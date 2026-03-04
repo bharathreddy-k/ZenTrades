@@ -52,6 +52,51 @@ This system automates the conversion of sales demo and onboarding call transcrip
 
 ---
 
+## 📥 Example Input
+
+The repository includes a complete working example with real transcripts:
+
+```
+dataset/
+├── demo/
+│   └── ben_penoyer_electrical.txt        ← Demo call transcript (~2.5KB)
+└── onboarding/
+    └── ben_penoyer_electrical.txt        ← Onboarding call transcript (~3.8KB)
+```
+
+**What's in the transcripts:**
+- Demo: High-level business overview, services, emergency scenarios
+- Onboarding: Detailed hours, addresses, phone numbers, staff details, protocols
+
+---
+
+## 📤 Example Output
+
+After running `python run_pipeline.py`, the system generates:
+
+```
+outputs/
+└── accounts/
+    └── ben_penoyer_electrical/
+        ├── v1/
+        │   ├── memo.json                 ← Initial config (43% complete)
+        │   └── agent_spec.json           ← DEV/staging AI agent config
+        ├── v2/
+        │   ├── memo.json                 ← Production config (93% complete)
+        │   └── agent_spec.json           ← Production AI agent config
+        └── patch.json                    ← Delta extracted from onboarding
+
+changelog/
+└── ben_penoyer_electrical_v1_to_v2.json  ← Audit trail (7 tracked changes)
+```
+
+**Key Differences:**
+- **v1**: Contains nulls for unknown fields, ready for staging/testing
+- **v2**: Production-ready with all details filled
+- **Changelog**: Documents exactly what changed between versions
+
+---
+
 ## 🏗 Architecture
 
 ```
